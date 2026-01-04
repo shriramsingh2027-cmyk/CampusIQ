@@ -225,9 +225,9 @@ async function handleChangePassword() {
 
 
 
-// mentor page 
+// mentor page (disabled - no AI)
 
-async function askMentor() {
+function askMentor() {
   const input = document.getElementById("mentorInput").value;
   const output = document.getElementById("mentorOutput");
 
@@ -236,30 +236,7 @@ async function askMentor() {
     return;
   }
 
-  // Loading state
-  output.innerText = "Thinking... 🤖";
-
-  try {
-    const response = await fetch(`${API_BASE_URL}/ask-ai`, {
-
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        question: input
-      })
-    });
-
-    const data = await response.json();
-
-    // Show AI response
-    output.innerText = data.reply;
-
-  } catch (error) {
-    output.innerText =
-      "Sorry, the AI mentor is temporarily unavailable. Please try again.";
-  }
+  output.innerText = "✅ Thank you for your question. AI features are currently disabled.";
 }
 
 
@@ -267,95 +244,28 @@ async function askMentor() {
 
 
 
-// recommend
+// recommend (disabled - no AI)
 
-async function getRecommendations() {
+function getRecommendations() {
   const domain = document.getElementById("domain").value;
   const year = document.getElementById("year").value;
   const goal = document.getElementById("goal").value;
-  const skills = document.getElementById("skills").value.trim();
 
   const list = document.getElementById("recommendationList");
   const box = document.getElementById("recommendationBox");
-
-  list.innerHTML = "";
 
   if (!domain || !year || !goal) {
     alert("Please select all fields");
     return;
   }
 
-  // Show loading state
   box.style.display = "block";
-  list.innerHTML = '<div class="card" style="margin:0;">🤖 Generating personalized recommendations...</div>';
-
-  try {
-    const response = await fetch(`${API_BASE_URL}/get-recommendation`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ domain, year, goal, skills })
-    });
-
-    const data = await response.json();
-
-    // Format the response nicely
-    const formattedReply = data.reply
-      .split('\n')
-      .map(line => {
-        if (line.startsWith('- ')) {
-          return `<div style="margin:8px 0; padding-left:16px;">• ${line.substring(2)}</div>`;
-        } else if (line.match(/^\d+\./)) {
-          return `<div style="margin:12px 0; font-weight:bold; color:var(--primary);">${line}</div>`;
-        } else if (line.startsWith('**') && line.endsWith('**')) {
-          return `<div style="margin:8px 0; font-weight:bold;">${line.replace(/\*\*/g, '')}</div>`;
-        } else if (line.trim()) {
-          return `<div style="margin:6px 0; color:var(--text-light);">${line}</div>`;
-        }
-        return '';
-      })
-      .join('');
-
-    list.innerHTML = formattedReply;
-    box.style.display = "block";
-
-  } catch (error) {
-    list.innerHTML = '<div class="card" style="margin:0; color:#c33;">❌ Could not get AI recommendations. Using offline guidance...</div>';
-
-    // Show original static recommendations as fallback
-    if (goal === "hackathon") {
-      list.innerHTML += `
-        <div class="card" style="margin:0;">
-          <b>🏆 Hackathons</b><br>
-          Participate in TechSprint & Smart India Hackathon.
-        </div>
-      `;
-    }
-
-    if (goal === "internship") {
-      list.innerHTML += `
-        <div class="card" style="margin:0;">
-          <b>💼 Internships</b><br>
-          Apply for summer internships on LinkedIn & Internshala.
-        </div>
-      `;
-    }
-
-    if (domain === "ai") {
-      list.innerHTML += `
-        <div class="card" style="margin:0;">
-          <b>🤖 AI Path</b><br>
-          Learn Python, ML basics, and model evaluation.
-        </div>
-      `;
-    }
-
-    box.style.display = "block";
-  }
+  list.innerHTML = '<div class="card" style="margin:0; padding: 12px;"><b>✅ AI recommendations are disabled.</b><br>Please explore the Live Events page to find opportunities.</div>';
 }
 
-// ============ HELPDESK FUNCTION ============
+// ============ HELPDESK FUNCTION (disabled - no AI) ============
 
-async function askHelpdeskAI() {
+function askHelpdeskAI() {
   const question = document.getElementById("helpdeskInput").value.trim();
   const output = document.getElementById("helpdeskOutput");
   const errorDiv = document.getElementById("helpdeskError");
@@ -365,41 +275,8 @@ async function askHelpdeskAI() {
     return;
   }
 
-  // Show loading state
-  output.innerText = "🤖 Finding answer...";
+  output.innerText = "✅ Thank you for your question. Helpdesk AI is currently disabled.";
   errorDiv.style.display = "none";
-
-  try {
-    const response = await fetch(`${API_BASE_URL}/ask-helpdesk`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question })
-    });
-
-    const data = await response.json();
-
-    // Format the response
-    const formattedReply = data.reply
-      .split('\n')
-      .map(line => {
-        if (line.startsWith('**') && line.endsWith('**')) {
-          return `<div style="margin:10px 0; font-weight:bold; color:var(--primary);">${line.replace(/\*\*/g, '')}</div>`;
-        } else if (line.startsWith('✓') || line.startsWith('•') || line.startsWith('-')) {
-          return `<div style="margin:6px 0; padding-left:16px;">  ${line}</div>`;
-        } else if (line.trim()) {
-          return `<div style="margin:6px 0;">${line}</div>`;
-        }
-        return '';
-      })
-      .join('');
-
-    output.innerHTML = formattedReply;
-
-  } catch (error) {
-    errorDiv.innerText = "❌ Connection error. Please try again.";
-    errorDiv.style.display = "block";
-    output.innerText = "Sorry, I couldn't process your question right now.";
-  }
 }
 
 // Legacy function for backward compatibility
