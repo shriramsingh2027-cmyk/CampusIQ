@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Login | CampusIQ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOP HEADER -->
+<div class="top-header">
+  <div class="top-left">🎓 <b>CampusIQ</b></div>
+  <div class="top-center">Student Login</div>
+</div>
+
+<!-- SPLIT LOGIN LAYOUT -->
+<div class="login-wrapper">
+
+  <!-- LEFT IMAGE SECTION -->
+  <div class="login-image">
+    <div class="image-overlay">
+      <h1>Not less capable.<br>Just less guided.</h1>
+      <p>
+        CampusIQ helps students discover the right opportunities,  
+        gain clarity, and prepare with confidence.
+      </p>
+    </div>
+  </div>
+
+  <!-- RIGHT LOGIN SECTION -->
+  <div class="login-form-area">
+    <div class="login-card blue-bordered-card">
+
+      <h2 id="formTitle">Welcome to CampusIQ</h2>
+      <p style="color:var(--text-light); margin-bottom:24px;">
+        <span id="formSubtitle">Student Login</span>
+      </p>
+
+      <!-- LOGIN FORM -->
+      <div id="loginForm">
+        <!-- Error Message -->
+        <div id="errorMessage" style="display: none; background: #fee; color: #c33; padding: 12px; border-radius: 8px; margin-bottom: 16px; border-left: 4px solid #c33;"></div>
+
+        <!-- Success Message -->
+        <div id="successMessage" style="display: none; background: #efe; color: #3c3; padding: 12px; border-radius: 8px; margin-bottom: 16px; border-left: 4px solid #3c3;"></div>
+
+        <label><b>Student ID</b></label>
+        <input type="text" id="studentId" placeholder="Enter your Student ID">
+
+        <label><b>Password</b></label>
+        <input type="password" id="password" placeholder="Enter your password">
+
+        <button onclick="handleLogin()" style="width:100%; margin-top:18px;">
+          Login
+        </button>
+
+        <p style="margin-top:20px; font-size:13px; color:var(--text-light); text-align:center;">
+          Don't have an account? <a onclick="switchToRegister()" style="color:var(--primary); cursor:pointer; font-weight:600;">Sign Up</a>
+        </p>
+
+        <p style="margin-top:12px; font-size:12px; color:var(--text-light); text-align:center;">
+          Demo: ID=2023000640, Pass=password
+        </p>
+      </div>
+
+      <!-- REGISTER FORM -->
+      <div id="registerForm" style="display: none;">
+        <!-- Error Message -->
+        <div id="regErrorMessage" style="display: none; background: #fee; color: #c33; padding: 12px; border-radius: 8px; margin-bottom: 16px; border-left: 4px solid #c33;"></div>
+
+        <!-- Success Message -->
+        <div id="regSuccessMessage" style="display: none; background: #efe; color: #3c3; padding: 12px; border-radius: 8px; margin-bottom: 16px; border-left: 4px solid #3c3;"></div>
+
+        <label><b>Student ID</b></label>
+        <input type="text" id="regStudentId" placeholder="Enter your Student ID (min 6 chars)">
+
+        <label><b>Full Name</b></label>
+        <input type="text" id="regName" placeholder="Enter your full name">
+
+        <label><b>Email</b></label>
+        <input type="email" id="regEmail" placeholder="Enter your email">
+
+        <label><b>Password</b></label>
+        <input type="password" id="regPassword" placeholder="Enter a password (min 4 chars)">
+
+        <button onclick="handleRegister()" style="width:100%; margin-top:18px;">
+          Create Account
+        </button>
+
+        <p style="margin-top:20px; font-size:13px; color:var(--text-light); text-align:center;">
+          Already have an account? <a onclick="switchToLogin()" style="color:var(--primary); cursor:pointer; font-weight:600;">Login</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

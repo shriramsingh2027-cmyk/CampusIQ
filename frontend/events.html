@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Live Events | CampusIQ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- TOP GLOBAL HEADER (SAME AS DASHBOARD) -->
+  <div class="top-header">
+    <div class="top-left">🎓 <b>CampusIQ</b></div>
+    <div class="top-center">Live Events</div>
+    <div class="top-right">
+      <div class="profile-icon" onclick="toggleProfile()">👤</div>
+      <div id="profileMenu" class="profile-dropdown">
+        <div id="profileStudentId"><b>ID:</b> 2023000640</div>
+        <div onclick="openProfile()">Change Password</div>
+        <div class="danger" onclick="logout()">Logout</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="events.html" class="active">Live Events</a>
+      <a href="my_calendar.html">My Calendar</a>
+      <a href="mentor.html">AI Mentor</a>
+      <a href="recommend.html">Recommend</a>
+      <a href="helpdesk.html">Helpdesk</a>
+      <a href="registered_events.html">Registered Events</a>
+      <a href="about.html">About</a>
+    </div>
+
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+      <div style="
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+">
+
+
+        <!-- PAGE TITLE -->
+        <h1 class="page-title">🔥 Live Events & Opportunities</h1>
+        <p style="color:var(--text-light); margin-bottom:24px;">
+          Discover hackathons, internships, summer schools, and competitions — all in one place.
+        </p>
+
+        <!-- DEADLINES -->
+        <div class="card blue-bordered-card" style="margin-bottom:30px;">
+          <h3>⏰ Upcoming Deadlines</h3>
+
+          <div class="deadline-ticker" style="margin-top:10px;">
+            <div class="deadline-track" style="color:var(--text-light); font-size:15px;">
+              <b>TechSprint Hackathon</b> – Jan 20 &nbsp;&nbsp; • &nbsp;&nbsp;
+              <b>AI Research Internship</b> – Jan 30 &nbsp;&nbsp; • &nbsp;&nbsp;
+              <b>Amazon Summer School</b> – Feb 15
+            </div>
+          </div>
+        </div>
+
+        <!-- EVENTS GRID -->
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; margin-bottom:32px;">
+
+          <div class="card blue-bordered-card" style="text-align:center;">
+            <h3>TechSprint Hackathon 2026</h3>
+            <p>📅 Deadline: 20 Jan 2026</p>
+            <p>🎯 Domain: Open Innovation</p>
+            <button onclick="viewEvent('TechSprint Hackathon 2026')">View</button>
+            <button onclick="registerEvent('TechSprint Hackathon 2026', 'Register')"
+              style="margin-left:8px;">Register</button>
+            <button onclick="addToCalendar('TechSprint Hackathon 2026', '20 Jan 2026')" style="margin-top:10px;">📅 Add
+              to Calendar</button>
+          </div>
+
+          <div class="card blue-bordered-card" style="text-align:center;">
+            <h3>AI Research Internship</h3>
+            <p>📅 Deadline: 30 Jan 2026</p>
+            <p>🎯 Domain: AI / ML</p>
+            <button onclick="viewEvent('AI Research Internship')">View</button>
+            <button onclick="registerEvent('AI Research Internship', 'Register')"
+              style="margin-left:8px;">Register</button>
+            <button onclick="addToCalendar('AI Research Internship', '30 Jan 2026')" style="margin-top:10px;">📅 Add to
+              Calendar</button>
+          </div>
+
+          <div class="card blue-bordered-card" style="text-align:center;">
+            <h3>International Summer School</h3>
+            <p>📅 Deadline: 15 Feb 2026</p>
+            <p>🎯 Focus: Research & Higher Studies</p>
+            <button onclick="viewEvent('International Summer School')">View</button>
+            <button onclick="registerEvent('International Summer School', 'Apply')"
+              style="margin-left:8px;">Apply</button>
+            <button onclick="addToCalendar('International Summer School', '15 Feb 2026')" style="margin-top:10px;">📅
+              Add to Calendar</button>
+          </div>
+
+          <div class="card blue-bordered-card" style="text-align:center;">
+            <h3>Smart India Hackathon</h3>
+            <p>📅 Deadline: Feb 2026</p>
+            <p>🎯 Domain: Software / Hardware</p>
+            <button onclick="viewEvent('Smart India Hackathon')">View</button>
+            <button onclick="registerEvent('Smart India Hackathon', 'Register')"
+              style="margin-left:8px;">Register</button>
+            <button onclick="addToCalendar('Smart India Hackathon', 'Feb 2026')" style="margin-top:10px;">📅 Add to
+              Calendar</button>
+          </div>
+
+          <div class="card blue-bordered-card" style="text-align:center;">
+            <h3>Merit-Based Scholarship</h3>
+            <p>📅 Deadline: 10 Mar 2026</p>
+            <p>🎯 Eligibility: Top Performers</p>
+            <button onclick="viewEvent('Merit-Based Scholarship')">View</button>
+            <button onclick="registerEvent('Merit-Based Scholarship', 'Apply')" style="margin-left:8px;">Apply</button>
+            <button onclick="addToCalendar('Merit-Based Scholarship', '10 Mar 2026')" style="margin-top:10px;">📅 Add to
+              Calendar</button>
+          </div>
+
+          <div class="card blue-bordered-card" style="text-align:center;">
+            <h3>Web Development Bootcamp</h3>
+            <p>📅 Deadline: Rolling</p>
+            <p>🎯 Skill: Full Stack</p>
+            <button onclick="viewEvent('Web Development Bootcamp')">View</button>
+            <button onclick="registerEvent('Web Development Bootcamp', 'Enroll')"
+              style="margin-left:8px;">Enroll</button>
+            <button onclick="addToCalendar('Web Development Bootcamp', 'Rolling')" style="margin-top:10px;">📅 Add to
+              Calendar</button>
+          </div>
+
+        </div>
+
+
+        <!-- WHY CAMPUSIQ -->
+        <div class="card blue-bordered-card" style="background:#F9FAFB; margin-bottom:20px;">
+          <h3>📌 Why CampusIQ?</h3>
+          <p style="color:var(--text-light);">
+            Many capable students miss great opportunities because information is scattered
+            across WhatsApp groups, emails, and notice boards.
+            CampusIQ centralizes everything and helps students act with clarity and confidence.
+          </p>
+        </div>
+
+        <!-- TIP -->
+        <div class="card blue-bordered-card" style="background:#F9FAFB;">
+          <h3>💡 Pro Tip</h3>
+          <p style="color:var(--text-light);">
+            Don’t apply blindly. Use the <b>AI Mentor</b> to understand
+            which opportunities align best with your skills, academic year, and career goals.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

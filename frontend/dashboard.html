@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dashboard | CampusIQ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- TOP GLOBAL HEADER -->
+  <div class="top-header">
+    <div class="top-left">🎓 <b>CampusIQ</b></div>
+    <div class="top-center">Dashboard</div>
+    <div class="top-right">
+      <div class="profile-icon" onclick="toggleProfile()">👤</div>
+      <div id="profileMenu" class="profile-dropdown">
+        <div id="profileStudentId"><b>ID:</b> 2023000640</div>
+        <div onclick="openProfile()">Change Password</div>
+        <div class="danger" onclick="logout()">Logout</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="events.html">Live Events</a>
+      <a href="my_calendar.html">My Calendar</a>
+      <a href="mentor.html">AI Mentor</a>
+      <a href="recommend.html">Recommend</a>
+      <a href="helpdesk.html">Helpdesk</a>
+      <a href="registered_events.html">Registered Events</a>
+      <a href="about.html">About</a>
+    </div>
+
+
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+      <div style="
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+">
+
+
+        <!-- ✅ TOP DASHBOARD GRID -->
+        <div style="display:flex; gap:20px; align-items:flex-start;">
+
+          <!-- LEFT COLUMN -->
+          <div style="flex:2;">
+
+            <!-- WELCOME BACK -->
+            <div class="card blue-bordered-card" style="margin-bottom:30px;">
+              <h1 style="font-size:28px;">Welcome back 👋</h1>
+              <p style="font-size:18px; margin-top:8px; color:var(--primary);">
+                Not less capable. Just less guided.
+              </p>
+              <p style="margin-top:10px; color:var(--text-light); max-width:650px;">
+
+                CampusIQ helps students discover the right opportunities, understand where they fit,
+                and prepare with confidence using AI-powered guidance — all in one place.
+              </p>
+              <p style="margin-top:10px; color:var(--text-light); max-width:650px;">
+
+                This dashboard brings together your academic context, opportunities, and guidance so you can take
+                informed actions — not rushed decisions.
+              </p>
+            </div>
+
+            <!-- STUDENT SNAPSHOT -->
+            <div class="card blue-bordered-card">
+              <h3>🎓 Student Snapshot</h3>
+
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:12px;">
+
+                <div>
+                  <p><b>College</b></p>
+                  <p style="color:var(--text-light);">
+                    Gandhi Institute of Technology and Management
+                  </p>
+                </div>
+
+                <div>
+                  <p><b>Program</b></p>
+                  <p style="color:var(--text-light);">
+                    B.Tech – Computer Science & Engineering
+                  </p>
+                </div>
+
+                <div>
+                  <p><b>Current Semester</b></p>
+                  <p style="color:var(--text-light);">
+                    Semester 6
+                  </p>
+                </div>
+
+                <div>
+                  <p><b>Attendance Status</b></p>
+                  <p style="color:#059669; font-weight:600;">
+                    90% – Excellent
+                  </p>
+                </div>
+
+                <div>
+                  <p><b>Academic Standing</b></p>
+                  <p style="color:#2563EB; font-weight:600;">
+                    CGPA 9.05 – Strong
+                  </p>
+                </div>
+
+                <p style="margin-top:10px; color:var(--text-light); max-width:650px;">
+
+                  This academic snapshot helps CampusIQ tailor guidance and recommendations to your current standing.
+                </p>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div style="flex:1;">
+            <div class="card blue-bordered-card">
+              <h4>🎯 Today’s Focus</h4>
+              <ul style="color:var(--text-light); padding-left:18px; line-height:1.8;">
+                <li>Review at least <b>one active opportunity</b> relevant to your domain.</li>
+                <li>Check the <b>eligibility, deadline, and required skills</b>.</li>
+                <li>Decide whether it aligns with your <b>current preparation level</b>.</li>
+                <li>If unsure, ask the <b>AI Mentor</b> before applying.</li>
+              </ul>
+              <p style="margin-top:10px; font-size:14px; color:#4B5563;">
+                Small, focused actions daily lead to big results over time.
+              </p>
+              <h2>
+                <p
+                  style="margin-top:12px; font-size:14px; color:#111827; border-left:3px solid var(--primary); padding-left:10px;">
+                  Focusing on one well-chosen opportunity is more effective than applying to many without clarity.
+                </p>
+              </h2>
+
+            </div>
+          </div>
+
+        </div>
+        <!-- ✅ END TOP DASHBOARD GRID -->
+
+        <!-- REST OF DASHBOARD (UNCHANGED) -->
+        <div style="display:flex; gap:20px; margin-top:30px;">
+
+          <div style="flex:2;">
+            <div class="card blue-bordered-card">
+              <h3>🔥 Live Opportunities</h3>
+              <p>Explore ongoing hackathons, internships, and competitions relevant to you.</p>
+              <a href="events.html"><button>View Events</button></a>
+            </div>
+
+            <div class="card blue-bordered-card">
+              <h3>🧠 AI Mentor</h3>
+              <p>Get personalized career guidance and preparation advice powered by AI.</p>
+              <a href="mentor.html"><button>Ask AI Mentor</button></a>
+            </div>
+
+            <div class="card blue-bordered-card">
+              <h3>🚀 Opportunity Recommendations</h3>
+              <p>Receive opportunity suggestions based on your domain, year, and goals.</p>
+              <a href="recommend.html"><button>Get Recommendations</button></a>
+            </div>
+
+            <div class="card blue-bordered-card">
+              <h3>🏫 College Helpdesk</h3>
+              <p>Ask academic or administrative questions anytime and get instant guidance.</p>
+              <a href="helpdesk.html"><button>Go to Helpdesk</button></a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- PRO TIP -->
+        <div class="card blue-bordered-card" style="background:#F9FAFB; margin-top:30px;">
+          <h3>💡 Pro Tip :</h3>
+          <p style="color:var(--text-light); line-height:1.6;">
+            Don’t apply blindly.
+            Use the <b>AI Mentor</b> to understand which opportunities align best with
+            your skills, academic year, and career goals.
+            <br>
+            Clarity beats speed. One well-prepared application is better than ten rushed ones.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

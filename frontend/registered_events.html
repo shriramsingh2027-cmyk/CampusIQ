@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registered Events | CampusIQ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- TOP GLOBAL HEADER -->
+    <div class="top-header">
+        <div class="top-left">🎓 <b>CampusIQ</b></div>
+        <div class="top-center">Registered Events</div>
+        <div class="top-right">
+            <div class="profile-icon" onclick="toggleProfile()">👤</div>
+            <div id="profileMenu" class="profile-dropdown">
+                <div id="profileStudentId"><b>ID:</b> 2023000640</div>
+                <div onclick="openProfile()">Change Password</div>
+                <div class="danger" onclick="logout()">Logout</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="events.html">Live Events</a>
+            <a href="my_calendar.html">My Calendar</a>
+            <a href="mentor.html">AI Mentor</a>
+            <a href="recommend.html">Recommend</a>
+            <a href="helpdesk.html">Helpdesk</a>
+            <a href="registered_events.html" class="active">Registered Events</a>
+            <a href="about.html">About</a>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main">
+            <div style="background: white; border-radius: 18px; padding: 24px;">
+
+                <!-- PAGE TITLE -->
+                <h1 class="page-title">📋 My Registered Events</h1>
+                <p style="color:var(--text-light); margin-bottom:24px;">
+                    Track all the events you've registered for in one place.
+                </p>
+
+                <!-- EVENTS LIST -->
+                <div id="registeredEventsContent" style="display: flex; flex-direction: column; gap: 16px;">
+                    <!-- Events will be rendered here by JavaScript -->
+                </div>
+
+                <!-- EMPTY STATE -->
+                <div id="emptyStateRegistered" style="display: none; text-align: center; padding: 60px 20px;">
+                    <div style="font-size: 64px; margin-bottom: 16px;">📋</div>
+                    <h3 style="color: var(--text); margin-bottom: 8px;">No Registrations Yet</h3>
+                    <p style="color: var(--text-light); margin-bottom: 24px;">
+                        You haven't registered for any events yet. Visit the Live Events page to explore opportunities!
+                    </p>
+                    <a href="events.html">
+                        <button
+                            style="padding: 12px 24px; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                            Browse Events
+                        </button>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

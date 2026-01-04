@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>AI Mentor | CampusIQ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- TOP GLOBAL HEADER -->
+  <div class="top-header">
+    <div class="top-left">🎓 <b>CampusIQ</b></div>
+    <div class="top-center">AI Mentor</div>
+    <div class="top-right">
+      <div class="profile-icon" onclick="toggleProfile()">👤</div>
+      <div id="profileMenu" class="profile-dropdown">
+        <div id="profileStudentId"><b>ID:</b> 2023000640</div>
+        <div onclick="openProfile()">Change Password</div>
+        <div class="danger" onclick="logout()">Logout</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="events.html">Live Events</a>
+      <a href="my_calendar.html">My Calendar</a>
+      <a href="mentor.html" class="active">AI Mentor</a>
+      <a href="recommend.html">Recommend</a>
+      <a href="helpdesk.html">Helpdesk</a>
+      <a href="registered_events.html">Registered Events</a>
+      <a href="about.html">About</a>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+      <div style="
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+">
+
+        <!-- POWERED BY GEMINI -->
+        <div style="display: flex; align-items: center; justify-content: flex-start; gap: 8px; margin-bottom: 20px;">
+          <div
+            style="display:flex; align-items:center; gap:6px; background: linear-gradient(135deg, #E2E8F0 0%, #F8FAFC 100%); padding: 6px 12px; border-radius: 20px; border: 1px solid #CBD5E1;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10.8687 2.68112C11.1611 1.76993 12.4566 1.76993 12.749 2.68112L14.7354 8.87146C14.8643 9.27361 15.2289 9.5594 15.6511 9.58883L22.1287 10.0401C23.0827 10.1066 23.3643 11.3129 22.569 11.8027L17.5262 14.9094C17.1856 15.1192 17.0396 15.5393 17.1652 15.9221L19.0911 21.7876C19.3948 22.7126 18.2711 23.4409 17.4764 22.8344L12.4336 18.9856C12.0929 18.7256 11.6248 18.7256 11.2841 18.9856L6.24131 22.8344C5.44665 23.4409 4.32296 22.7126 4.62663 21.7876L6.55248 15.9221C6.67812 15.5393 6.53213 15.1192 6.19156 14.9094L1.14877 11.8027C0.353392 11.3129 0.635034 10.1066 1.58902 10.0401L8.06663 9.58883C8.48882 9.5594 8.85338 9.27361 8.98236 8.87146L10.9687 2.68112H10.8687Z"
+                fill="url(#paint0_linear)" />
+              <defs>
+                <linearGradient id="paint0_linear" x1="2.00004" y1="5.49999" x2="21.5" y2="18.5"
+                  gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#4E79F3" />
+                  <stop offset="1" stop-color="#844DF7" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <span style="font-family: 'Google Sans', sans-serif; font-weight: 600; font-size: 13px; color: #475569;">
+              Powered by <span
+                style="background: linear-gradient(90deg, #4285F4, #9B72CB); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Google
+                Gemini</span>
+            </span>
+          </div>
+        </div>
+
+
+        <!-- INTRO -->
+        <div class="card blue-bordered-card">
+          <h2>🧠 AI Student Mentor</h2>
+          <p style="color:var(--text-light); margin-top:8px;">
+            Ask anything about hackathons, internships, skills, or career preparation.
+            This mentor guides you — not just answers.
+          </p>
+        </div>
+
+        <!-- CHAT INPUT -->
+        <div class="card blue-bordered-card">
+          <label><b>Your Question</b></label>
+          <textarea id="mentorInput" rows="4" style="
+    width:100%;
+    border:2px solid var(--primary);
+    border-radius:12px;
+    padding:14px;
+    font-size:15px;
+    outline:none;
+    resize:none;
+  " placeholder="Tell me about yourself and your goals…
+Example: I am a 3rd year CSE student interested in AI and internships. What should I focus on next?"></textarea>
+
+          </textarea>
+
+          <button onclick="askMentor()" style="
+        margin-top:12px;
+        padding:10px 18px;
+        font-size:14px;
+      ">
+            Get Mentor Guidance
+          </button>
+        </div>
+
+        <!-- AI OUTPUT -->
+        <div class="card blue-bordered-card">
+          <h3>🤖 Mentor Response</h3>
+          <div id="mentorOutput" style="
+        color:var(--text-light);
+        margin-top:10px;
+        line-height:1.6;
+      ">
+            👋 Hi! I’m your AI Mentor.
+            Share your goals, year, or interests — I’ll help you plan your next steps.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
